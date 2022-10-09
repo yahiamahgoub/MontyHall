@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MontyHallUI.MainPage">
+    <VerticalStackLayout WidthRequest="300">
+        <Label Text="Enter number of simulations" Margin="0, 0, 0, 10"/>
+        <Entry Placeholder="Attempts" Text="{Binding AttemptsCount, Mode=OneWayToSource}" Margin="0, 0, 0, 10"/>
+        <Label Text="Switch Door?"/>
+        <Switch IsToggled="{Binding SwitchDoor}" Margin="0, 0, 0, 10"/>
+        <Button Text="Start Simulation" Command="{Binding StartSimulation}" Margin="0, 0, 0, 15"/>
+
+        <HorizontalStackLayout Margin="0, 0, 0, 30">
+            <Label Text="{Binding CurrentWin, StringFormat='Win ({0}%):'}"/>
+            <Label Margin="10, 0, 0 ,0" Text="{Binding CurrentCars, StringFormat='Cars: {0},'}" />
+            <Label Margin="10, 0, 0 ,0" Text="{Binding CurrentGoats, StringFormat='Goats: {0}'}" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Margin="0, 10, 0, 10">
+            <Label Text="{Binding NoSwitchCarsPercentage, StringFormat='Total no switch win ({0}%):'}"/>
+            <Label Margin="10, 0, 0 ,0" Text="{Binding NoSwitchCarsCount, StringFormat='Cars: {0},'}" />
+            <Label Margin="10, 0, 0 ,0" Text="{Binding NoSwitchGoatsCount, StringFormat='Goats: {0}'}" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Label Text="{Binding SwitchCarsPercentage, StringFormat='Total switch win ({0}%):'}"/>
+            <Label Margin="10, 0, 0 ,0" Text="{Binding SwitchCarsCount, StringFormat='Cars: {0},'}" />
+            <Label Margin="10, 0, 0 ,0" Text="{Binding SwitchGoatsCount, StringFormat='Goats: {0}'}" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+
+</ContentPage>
